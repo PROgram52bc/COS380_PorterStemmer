@@ -101,11 +101,11 @@ released            releas              *
 
 ## Analysis
 
-| Stemmed correctly(1) | Stemmed incorrectly(2) | Failed to stem(3) | Stemmed unncessarily(4) |
-| :------------------: | :--------------------: | :---------------: | :---------------------: |
+| Stemmed correctly(1) | Stemmed incorrectly(2) | Failed to stem(3) | Stemmed unncessarily(4) |  Total   |
+| :------------------: | :--------------------: | :---------------: | :---------------------: | :------: |
+|       78%(69)        |         9%(8)          |       3%(3)       |         10%(9)          | 100%(88) |
 
-
-|
+> Percentage is calcaulated based on the categorization made in Appendix.
 
 Words in group (1) are words stemmed correctly.
 
@@ -127,12 +127,17 @@ This behavior is dictated by the rule
 
 But it should exclude `*D` as well, apart from `*L or *S or *Z`
 
-Words in group (3) turned out to be very rare. The only example I observed is `relationship`, which could arguably be stemmed into `relate` or `relation`, but it is also arguable.
+Words in group (3) are not stemmed, but could be stemmed. It turned out to be very rare. The only example I observed is `relationship`, which could arguably be stemmed into `relate` or `relation`, but it is also arguable.
 
 Words in group (4) are words stemmed unnecessarily.
-For example, the word `investigate` is stemmed into `investig`, but in fact it doesn't need to be stemmed. This is probably because the algorithm identify
 
--   Another example is `has`, which is stemmed into `ha`, according to the rule `S=>` in step `1a`.
+-   One typical example is `has`, which is stemmed into `ha`, according to the rule `S=>` in step `1a`.
+
+-   Another example is `his`, which is stemmed into `hi`, for the same reason as above.
+
+-                                       There are also debatable cases in this category. For example, the word `investigate` is stemmed into `investig`, but it could be argued that it doesn't need to be stemmed.
+
+## Appendix
 
 Below is the same list of words labeled with one of the four categories above:
 
